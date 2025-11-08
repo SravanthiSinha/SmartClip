@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+/* Button Styles */
+.btn-primary {
+  @apply text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 transition-all duration-200 inline-flex items-center justify-center;
+  background: linear-gradient(to right, #0284c7, #0369a1);
+}
+
+.btn-secondary {
+  @apply bg-white font-semibold rounded-lg border-2 transform hover:-translate-y-0.5 transition-all duration-200 inline-flex items-center justify-center;
+  color: #0369a1;
+  border-color: #7dd3fc;
+}
+
+.btn-secondary:hover {
+  background-color: #e0f2fe;
+  border-color: #38bdf8;
+}
+
+/* Card Styles */
+.card {
+  @apply bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow duration-300 p-6 border border-gray-100;
+}
+
+@layer utilities {
+  /* Custom animations */
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
+    }
+    50% {
+      box-shadow: 0 0 30px rgba(14, 165, 233, 0.6);
+    }
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+}
